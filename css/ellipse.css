@@ -1,21 +1,22 @@
+/* Main styles for larger screens (desktop, tablets in landscape) */
 .wrap {
   width: 50%;
   height: 50%;
   margin: 0;
   position: absolute;
   -webkit-perspective: 4000px;
-          perspective: 4000px;
+  perspective: 4000px;
   -webkit-transform-style: preserve-3d;
-          transform-style: preserve-3d;
+  transform-style: preserve-3d;
   top: 55vh;
   left: 15vw;
 }
 
 .circle {
   -webkit-filter: blur(1px);
-          filter: blur(1px);
+  filter: blur(1px);
   -webkit-transform-style: preserve-3d;
-          transform-style: preserve-3d;
+  transform-style: preserve-3d;
   box-sizing: border-box;
   opacity: 0;
   width: 30vh;
@@ -26,32 +27,28 @@
   top: 0;
   left: 0;
   -webkit-animation: spin 20s ease-in-out alternate infinite;
-          animation: spin 20s ease-in-out alternate infinite;
+  animation: spin 20s ease-in-out alternate infinite;
 }
 
 .circle:nth-of-type(1) {
   -webkit-animation-delay: 500ms;
-          animation-delay: 500ms;
+  animation-delay: 500ms;
 }
-
 .circle:nth-of-type(2) {
   -webkit-animation-delay: 1000ms;
-          animation-delay: 1000ms;
+  animation-delay: 1000ms;
 }
-
 .circle:nth-of-type(3) {
   -webkit-animation-delay: 1500ms;
-          animation-delay: 1500ms;
+  animation-delay: 1500ms;
 }
-
 .circle:nth-of-type(4) {
   -webkit-animation-delay: 2000ms;
-          animation-delay: 2000ms;
+  animation-delay: 2000ms;
 }
-
 .circle:nth-of-type(5) {
   -webkit-animation-delay: 2500ms;
-          animation-delay: 2500ms;
+  animation-delay: 2500ms;
 }
 
 @-webkit-keyframes spin {
@@ -73,7 +70,6 @@
     opacity: 1;
   }
 }
-
 @keyframes spin {
   0% {
     -webkit-transform: rotateY(0deg) rotateX(0deg);
@@ -114,55 +110,82 @@
   width: 10vh;
 }
 
-/* --- Mobile Responsive Adjustments --- */
-@media (max-width: 768px) {
-  .wrap {
-    width: 80%;
-    height: 80%;
-    top: 50vh;
-    left: 10vw;
+/* Media query for mobile devices (screens up to 767px wide) */
+@media only screen and (max-width: 767px) {
+  body {
+    /* Force landscape orientation on mobile devices */
+    orientation: landscape;
   }
-  .circle {
-    width: 25vh;
-    height: 25vh;
-    border-width: 0.8vh;
-  }
-  .circle1 {
-    height: 35vh;
-    width: 18vh;
-  }
-  .circle2 {
-    height: 30vh;
-    width: 40vh;
-  }
-  .circle3 {
-    height: 8vh;
-    width: 8vh;
-  }
-}
 
-@media (max-width: 480px) {
   .wrap {
-    width: 90%;
-    height: 90%;
-    top: 45vh;
-    left: 5vw;
+    width: 90%; /* Adjust width for mobile screens */
+    height: 70%; /* Adjust height for mobile screens */
+    top: 50vh; /* Center vertically on mobile screens */
+    left: 5vw; /* Center horizontally on mobile screens */
   }
+
   .circle {
-    width: 20vh;
-    height: 20vh;
-    border-width: 0.6vh;
+    width: 25vh; /* Slightly smaller circles for mobile */
+    height: 25vh; /* Slightly smaller circles for mobile */
+    border-width: 0.8vh; /* Adjust border width for mobile */
   }
+
   .circle1 {
-    height: 30vh;
-    width: 16vh;
+    height: 35vh; /* Adjust circle1 size for mobile */
+    width: 18vh; /* Adjust circle1 size for mobile */
   }
+
   .circle2 {
-    height: 25vh;
-    width: 35vh;
+    width: 40vh; /* Adjust circle2 size for mobile */
+    height: 22vh; /* Adjust circle2 size for mobile */
   }
+
   .circle3 {
-    height: 6vh;
-    width: 6vh;
+    height: 9vh; /* Adjust circle3 size for mobile */
+    width: 9vh; /* Adjust circle3 size for mobile */
+  }
+
+  @-webkit-keyframes spin {
+    0% {
+      -webkit-transform: rotateY(0deg) rotateX(0deg) scale(0.9); /* Slightly scale down animation for mobile */
+      opacity: 1;
+    }
+    25% {
+      -webkit-transform: rotateY(180deg) rotateX(360deg) scale(0.9); /* Slightly scale down animation for mobile */
+    }
+    50% {
+      -webkit-transform: rotateY(540deg) rotateX(540deg) scale(0.9); /* Slightly scale down animation for mobile */
+    }
+    75% {
+      -webkit-transform: rotateY(720deg) rotateX(900deg) scale(0.9); /* Slightly scale down animation for mobile */
+    }
+    100% {
+      -webkit-transform: rotateY(900deg) rotateX(1080deg) scale(0.9); /* Slightly scale down animation for mobile */
+      opacity: 1;
+    }
+  }
+  @keyframes spin {
+    0% {
+      -webkit-transform: rotateY(0deg) rotateX(0deg) scale(0.9); /* Slightly scale down animation for mobile */
+      transform: rotateY(0deg) rotateX(0deg) scale(0.9); /* Slightly scale down animation for mobile */
+      opacity: 1;
+    }
+    25% {
+      -webkit-transform: rotateY(180deg) rotateX(360deg) scale(0.9); /* Slightly scale down animation for mobile */
+      transform: rotateY(180deg) rotateX(360deg) scale(0.9); /* Slightly scale down animation for mobile */
+    }
+    50% {
+      -webkit-transform: rotateY(540deg) rotateX(540deg) scale(0.9); /* Slightly scale down animation for mobile */
+      transform: rotateY(540deg) rotateX(540deg) scale(0.9); /* Slightly scale down animation for mobile */
+    }
+    75% {
+      -webkit-transform: rotateY(720deg) rotateX(900deg) scale(0.9); /* Slightly scale down animation for mobile */
+      transform: rotateY(720deg) rotateX(900deg) scale(0.9); /* Slightly scale down animation for mobile */
+    }
+    100% {
+      -webkit-transform: rotateY(900deg) rotateX(1080deg) scale(0.9); /* Slightly scale down animation for mobile */
+      transform: rotateY(900deg) rotateX(1080deg) scale(0.9); /* Slightly scale down animation for mobile */
+      opacity: 1;
+    }
   }
 }
