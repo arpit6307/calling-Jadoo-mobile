@@ -1,3 +1,4 @@
+/* wave.css */
 .sea {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -646,13 +647,8 @@
   }
 }
 
-/* Media query for mobile devices (screens up to 767px wide) */
+/* Media query for mobile devices (screens up to 767px wide) - Wave adjustments */
 @media only screen and (max-width: 767px) {
-  body {
-    /* Force landscape orientation on mobile devices */
-    orientation: landscape;
-  }
-
   .sea {
     width: 50vw; /* Adjust sea width for mobile */
     height: 50vw; /* Adjust sea height for mobile */
